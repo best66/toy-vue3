@@ -9,3 +9,9 @@ Sorry but this project is useless to most people.
 ## dev
 
 > yarn dev
+
+## TODO
+
+- reactivity
+
+  - effect

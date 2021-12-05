@@ -1,5 +1,5 @@
 {
-  "name": "@vue/shared",
+  "name": "@toy-vue/shared",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",

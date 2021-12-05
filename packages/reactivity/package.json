@@ -1,5 +1,5 @@
 {
-  "name": "@vue/reactivity",
+  "name": "@toy-vue/reactivity",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -12,6 +12,6 @@
     ]
   },
   "dependencies": {
-    "@vue/shared": "^1.0.0"
+    "@toy-vue/shared": "*"
   }
 }
