@@ -20,6 +20,7 @@ Sorry but this project is not helpful to most people.
 
 ## TODO
 
+- [x] architecture
 - reactivity
   - [x] reactive
   - [x] shallowReactive
