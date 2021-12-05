@@ -1,0 +1,8 @@
+{
+  "name": "toy-vue",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/best66/toy-vue.git",
+  "author": "Cent Chan <best66@foxmail.com>",
+  "license": "MIT"
+}
