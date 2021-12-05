@@ -1,5 +1,6 @@
 {
-  "name": "toy-vue",
+  "name": "toy-vue3",
+  "private": "true",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/best66/toy-vue.git",
