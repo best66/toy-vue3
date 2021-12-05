@@ -1,2 +1,5 @@
-let test = 1;
-export {test}
+export function isObject(val) {
+  return typeof val == 'object' && val !== null;
+}
+
+export let extend = Object.assign;

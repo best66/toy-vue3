@@ -2,19 +2,26 @@
 
 Sorry but this project is useless to most people.
 
-## install
+## Install
 
 > yarn install
 
-## dev
+## Run Examples
+
+> [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+## Develop
 
 > yarn dev
 
-## build
+## Build
 
 > yarn build
 
 ## TODO
 
 - reactivity
-  - [x] effect
+  - [x] reactive
+  - [x] shallowReactive
+  - [x] readonly
+  - [x] shallowReadonly
