@@ -1,6 +1,6 @@
 # toy-vue3
 
-Sorry but this project is useless to most people.
+Sorry but this project is not helpful to most people.
 
 ## Install
 
