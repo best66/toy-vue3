@@ -10,13 +10,18 @@
     <script type="module">
       import {
         reactive,
-        readonly
+        readonly,
+        effect
       } from '/node_modules/@toy-vue/reactivity/dist/reactivity.esm-bundler.js';
 
-      const proxy = readonly({ name: '123' });
-      console.log(proxy.name);
-      proxy.name = 1;
-      console.log(proxy.name);
+      const proxy = reactive({ name: '123', arr: [] });
+
+      proxy.name = '2';
+      proxy.arr.push(1);
+
+      effect(() => {
+        console.log(1);
+      });
     </script>
   </body>
 </html>

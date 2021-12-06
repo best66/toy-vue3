@@ -30,7 +30,6 @@ export function shallowReadonly(target) {
  */
 const reactiveMap = new WeakMap();
 const readonlyMap = new WeakMap();
-
 function createReactiveObject(target, isReadonly: boolean = false, baseHandler) {
   if (!isObject(target)) return target;
 
