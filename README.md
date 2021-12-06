@@ -26,3 +26,5 @@ Sorry but this project is not helpful to most people.
   - [x] shallowReactive
   - [x] readonly
   - [x] shallowReadonly
+  - [x] effect
+  - [ ] ref

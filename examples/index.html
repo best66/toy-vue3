@@ -14,14 +14,14 @@
         effect
       } from '/node_modules/@toy-vue/reactivity/dist/reactivity.esm-bundler.js';
 
-      const proxy = reactive({ name: '123', arr: [] });
-
-      proxy.name = '2';
-      proxy.arr.push(1);
+      const proxy = reactive({ name: '123', arr: [1, 2, 3] });
 
       effect(() => {
-        console.log(1);
+        console.log(proxy.arr[2]);
       });
+
+      proxy.arr[2] = 889;
+      proxy.arr.length = 1;
     </script>
   </body>
 </html>

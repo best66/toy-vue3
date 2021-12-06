@@ -1,11 +1,13 @@
 import { extend, isObject, hasChanged, isArray, isIntegerKey, hasOwn } from '@toy-vue/shared';
 import { reactive, readonly } from './reactive';
+import { track, trigger } from './effect';
 
 function createGetter(isReadonly: boolean = false, shallow: boolean = false) {
   return function get(target, key, receiver) {
     const res = Reflect.get(target, key, receiver);
     if (!isReadonly) {
-      //console.log('收集依赖');
+      //收集依赖
+      track(target, 'get', key);
     }
     if (isObject(res) && !shallow) {
       return isReadonly ? readonly(res) : reactive(res);
@@ -26,9 +28,9 @@ function createSetter(shallow: boolean = false) {
     const res = Reflect.set(target, key, value, receiver);
 
     if (!hadKey) {
-      //console.log('新增', key);
+      trigger(target, 'add', key, value);
     } else if (hasChanged(oldValue, value)) {
-      //console.log(oldValue, value, '修改');
+      trigger(target, 'set', key, value, oldValue);
     }
 
     return res;
