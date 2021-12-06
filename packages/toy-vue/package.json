@@ -1,10 +1,10 @@
 {
-  "name": "@toy-vue/runtime-dom",
+  "name": "toy-vue",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "buildOptions": {
-    "name": "VueRuntimeDom",
+    "name": "Vue",
     "formats": [
       "esm-bundler",
       "cjs",
@@ -12,6 +12,7 @@
     ]
   },
   "dependencies": {
-    "@toy-vue/runtime-core": "*"
+    "@toy-vue/runtime-core": "*",
+    "@toy-vue/reactivity": "*"
   }
 }

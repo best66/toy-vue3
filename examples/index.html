@@ -7,21 +7,8 @@
     <title>Document</title>
   </head>
   <body>
-    <script type="module">
-      import {
-        reactive,
-        readonly,
-        effect
-      } from '/node_modules/@toy-vue/reactivity/dist/reactivity.esm-bundler.js';
-
-      const proxy = reactive({ name: '123', arr: [1, 2, 3] });
-
-      effect(() => {
-        console.log(proxy.arr[2]);
-      });
-
-      proxy.arr[2] = 889;
-      proxy.arr.length = 1;
-    </script>
+    <button onclick="window.$state.count++">数字加一</button>
+    <div id="app"></div>
+    <script type="module" src="./index.mjs"></script>
   </body>
 </html>

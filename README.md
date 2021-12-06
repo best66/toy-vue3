@@ -27,7 +27,8 @@ Sorry but this project is not helpful to most people.
   - [x] readonly
   - [x] shallowReadonly
   - [x] effect
-  - [ ] ref
+  - [x] ref
 - runtime-core
   - [ ] h
   - [ ] renderer
+  - [ ] createApp
