@@ -1,10 +1,10 @@
 {
-  "name": "@toy-vue/reactivity",
+  "name": "@toy-vue/runtime-core",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "buildOptions": {
-    "name": "VueReactivity",
+    "name": "VueRuntimeCore",
     "formats": [
       "esm-bundler",
       "cjs",
@@ -12,6 +12,6 @@
     ]
   },
   "dependencies": {
-    "@toy-vue/shared": "*"
+    "@toy-vue/reactivity": "*"
   }
 }

@@ -39,7 +39,13 @@ function createConfig(format, output) {
         tsconfig: path.resolve(__dirname, 'tsconfig.json')
       }),
       resolvePlugin()
-    ]
+    ],
+    onwarn: (msg, warn) => {
+      // 忽略 Circular 的错误
+      if (!/Circular/.test(msg)) {
+        warn(msg);
+      }
+    }
   };
 }
 

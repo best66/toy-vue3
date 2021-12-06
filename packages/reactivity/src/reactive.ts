@@ -35,8 +35,8 @@ function createReactiveObject(target, isReadonly: boolean = false, baseHandler) 
 
   const proxyMap = isReadonly ? readonlyMap : reactiveMap;
 
-  const existProvy = proxyMap.get(target);
-  if (existProvy) return existProvy;
+  const existProxy = proxyMap.get(target);
+  if (existProxy) return existProxy;
 
   const proxy = new Proxy(target, baseHandler);
   proxyMap.set(target, proxy);
