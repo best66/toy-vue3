@@ -11,13 +11,13 @@ export const App = {
       ret = h('div', { class: `class${context.state.count}` }, [
         h('p', null, '123'),
         h('div', null, context.state.count),
-        h('p', null, context.state.count2)
+        h('p', null, context.com.value)
       ]);
     } else {
       ret = h('div', { class: `class${context.state.count}` }, [
         h('p', null, '123'),
         h('p', null, context.state.count),
-        h('p', null, context.state.count2)
+        h('p', null, context.com.value)
       ]);
     }
 
@@ -25,13 +25,14 @@ export const App = {
   },
   setup() {
     const state = reactive({
-      count: 0,
-      count2: 1
+      count: 0
     });
-    const state2 = ref(true);
+    const com = computed(() => {
+      return state.count + 1;
+    });
 
-    window.$state = state;
+    window.$state = { state, com };
 
-    return { state, state2 };
+    return window.$state;
   }
 };
