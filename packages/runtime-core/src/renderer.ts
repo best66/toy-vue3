@@ -2,7 +2,6 @@
 
 //n1 oldVnode, n2 newVnode
 export function diff(n1, n2) {
-  console.log(n1, n2);
   //1.tag
   if (n1.tag !== n2.tag) {
     //这里修改了

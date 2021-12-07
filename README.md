@@ -28,6 +28,7 @@ Sorry but this project is not helpful to most people.
   - [x] shallowReadonly
   - [x] effect
   - [x] ref
+  - [x] computed
 - runtime-core
   - [ ] h
   - [ ] renderer
