@@ -2,11 +2,11 @@
 
 //n1 oldVnode, n2 newVnode
 export function diff(n1, n2) {
-  //1.tag
-  if (n1.tag !== n2.tag) {
+  //1.type
+  if (n1.type !== n2.type) {
     //这里修改了
     console.log('这里不对');
-    n1.el.replaceWith((n2.el = document.createElement(n2.tag)));
+    n1.el.replaceWith((n2.el = document.createElement(n2.type)));
   } else {
     n2.el = n1.el;
     //2.props
@@ -96,10 +96,10 @@ export function diff(n1, n2) {
 }
 
 export function mountElement(vnode, container) {
-  const { tag, props, children } = vnode;
+  const { type, props, children } = vnode;
 
-  //tag
-  const element = (vnode.el = document.createElement(tag));
+  //type
+  const element = (vnode.el = document.createElement(type));
 
   //props
   if (props) {

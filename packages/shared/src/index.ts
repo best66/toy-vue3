@@ -1,3 +1,5 @@
+export * from './shapeFlags';
+
 export function isObject(val): boolean {
   return typeof val == 'object' && val !== null;
 }

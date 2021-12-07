@@ -1,10 +1,13 @@
-//tag props child
+import { createVNode } from './vnode';
 
-//生成虚拟dom
-export function h(tag, props, children) {
-  return {
-    tag,
-    props,
-    children
-  };
-}
+/**
+ * 创建虚拟dom
+ * @param type
+ * @param props
+ * @param children
+ * @returns
+ */
+export const h = (type: string, props: any, children: string | Array<any>) => {
+  console.log(createVNode(type, props, children));
+  return createVNode(type, props, children);
+};
