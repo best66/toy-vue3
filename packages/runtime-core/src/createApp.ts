@@ -1,28 +1,17 @@
-import { effect } from '@toy-vue/reactivity';
-import { diff, mountElement } from '@toy-vue/runtime-core';
+import { createVNode } from './vnode';
 
-export function createApp(rootComponent) {
-  return {
-    mount(rootContainer) {
-      const context = rootComponent.setup();
-      let isMounted = false;
-      let preVirtualDOM;
+export function createAppAPI(render) {
+  return function createApp(rootComponent) {
+    const app = {
+      _component: rootComponent,
+      mount(rootContainer) {
+        const vnode = createVNode(rootComponent);
+        //基于 vnode 进行开箱
+        //将vnode渲染成vdom，并挂载到根组件
+        render(vnode, rootContainer);
+      }
+    };
 
-      effect(() => {
-        if (!isMounted) {
-          //init
-          rootContainer.innerHTML = '';
-          const virtualDOM = rootComponent.render(context);
-          mountElement(virtualDOM, rootContainer);
-          preVirtualDOM = virtualDOM;
-          isMounted = true;
-        } else {
-          //update
-          const virtualDOM = rootComponent.render(context);
-          diff(preVirtualDOM, virtualDOM);
-          preVirtualDOM = virtualDOM;
-        }
-      });
-    }
+    return app;
   };
 }
