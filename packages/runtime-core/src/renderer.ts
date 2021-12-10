@@ -2,7 +2,8 @@ import { Fragment, Text } from './vnode';
 import { ShapeFlags } from '@toy-vue/shared';
 import { effect } from '@toy-vue/reactivity';
 import { createAppAPI } from './createApp';
-import { createComponentInstance } from './component';
+import { createComponentInstance, setupComponent } from './component';
+import { shouldUpdateComponent } from './componentRenderUtils';
 
 export function createRenderer(options) {
   //解构
@@ -486,13 +487,7 @@ export function createRenderer(options) {
     // 因为 ReactiveEffect 是内部对象，加一个参数是无所谓的
     // 后面如果要实现 scope 的逻辑的时候 需要改过来
     // 现在就先算了
-    instance.update = effect(componentUpdateFn, {
-      scheduler: () => {
-        // 把 effect 推到微任务的时候在执行
-        // queueJob(effect);
-        queueJob(instance.update);
-      }
-    });
+    instance.update = effect(componentUpdateFn);
   }
 
   function updateComponentPreRender(instance, nextVNode) {
