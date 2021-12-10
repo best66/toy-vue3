@@ -8,6 +8,6 @@ import { createVNode } from './vnode';
  * @returns
  */
 export const h = (type: string, props: any, children: string | Array<any>) => {
-  console.log(createVNode(type, props, children));
+  //console.log(createVNode(type, props, children));
   return createVNode(type, props, children);
 };

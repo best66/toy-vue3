@@ -7,7 +7,7 @@ import { ShapeFlags } from '@toy-vue/shared';
  * @param children
  * @returns
  */
-export const createVNode = (type: any, props: any, children: string | Array<any>) => {
+export const createVNode = (type: any, props?: any, children?: string | Array<any>) => {
   const vnode = {
     el: null,
     component: null,
@@ -42,6 +42,17 @@ export function normalizeChildren(vnode, children) {
       vnode.shapeFlag |= ShapeFlags.SLOTS_CHILDREN;
     }
   }
+}
+
+// 用 symbol 作为唯一标识
+export const Text = Symbol('Text');
+export const Fragment = Symbol('Fragment');
+
+/**
+ * @private
+ */
+export function createTextVNode(text: string = ' ') {
+  return createVNode(Text, {}, text);
 }
 
 // 基于 type 来判断是什么类型的组件

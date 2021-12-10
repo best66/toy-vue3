@@ -5,19 +5,19 @@ export const App = {
   render(context) {
     //构建视图
     // 要计算出最小的更新点，diff算法
-    console.log('执行');
+    console.log('执行！！！！！！！');
     let ret;
     if (context.state.count == 1) {
       ret = h('div', { class: `class${context.state.count}` }, [
-        h('p', null, '123'),
-        h('div', null, context.state.count),
-        h('p', null, context.com.value)
+        h('p', {}, '123'),
+        h('p', {}, String(context.state.count)),
+        h('p', {}, String(context.com.value))
       ]);
     } else {
       ret = h('div', { class: `class${context.state.count}` }, [
-        h('p', null, '123'),
-        h('p', null, context.state.count),
-        h('p', null, context.com.value)
+        h('p', {}, '123'),
+        h('p', {}, String(context.state.count)),
+        h('p', {}, String(context.com.value))
       ]);
     }
 
