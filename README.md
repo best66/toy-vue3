@@ -1,5 +1,7 @@
 # toy-vue3
 
+[![Build Status](https://app.travis-ci.com/best66/toy-vue3.svg?branch=main)](https://app.travis-ci.com/best66/toy-vue3)
+
 Sorry but this project is not helpful to most people.
 
 ## Install

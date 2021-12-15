@@ -12,7 +12,7 @@
     ]
   },
   "dependencies": {
-    "@toy-vue/core": "*",
+    "@toy-vue/runtime-core": "*",
     "@toy-vue/shared": "*"
   }
 }
